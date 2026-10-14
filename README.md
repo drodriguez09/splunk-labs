@@ -19,9 +19,9 @@ Hands-on practice with Splunk as I prepare for the **Splunk Core Certified User*
 
 ## Lessons learned
 
-- **"All time" vs. "All time (real-time)": ** After I loaded my training data, I was exploring Splunk and re-clicked the search button. This cleared out my data that had populated. To get it back I had to tell Splunk to look at the "All time" option so that it could look at historical data since the data I was working had an older timestamp. One mishap that occurred was that I had first chosen the "All time (real-time)" option which did not populate anything since that only shows new incoming events. 
+- **"All time" vs. "All time (real-time)":** After loading my training data, I re-ran a search and my results disappeared. The data was still there, but the time picker was looking at the wrong time window. I first picked "All time (real-time)", which still showed nothing because it only watches for new incoming events. Switching to plain "All time" brought my results back, since my data had older timestamps. **Takeaway:** when a search comes back empty, check the time range first.
 
 ## About me
 
-Technical trainer moving into SOC analyst work. ComptTIA Security+ certified. 
+Technical trainer moving into SOC analyst work. CompTIA Security+ certified. 
 See my [GitHub Profile](https://github.com/drodriguez09) for more. 
