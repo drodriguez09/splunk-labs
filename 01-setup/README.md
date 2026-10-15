@@ -10,12 +10,12 @@ How I built my Splunk home lab and loaded practice data.
 
 ## Steps
 
-1. Downloaded and installed Splunk Enterprise. The process is easy and you just need to follow the installation wizard for the most part.
+1. Downloaded and installed Splunk Enterprise using the installation wizard
 2. Opened Splunk in my browser at `http://localhost:8000`
 3. Created a new index named `tutorial` (Settings > Indexes > New Index)
 4. Uploaded `tutorialdata.zip` (Settings > Add Data > Upload)
 5. Set the host using **Regular expression on path** with `\\(.*)\/`
-6. Sent the data to the 'tutorial" index
+6. Sent the data to the `tutorial` index
 
 
 ## Troubleshooting: the host problem
