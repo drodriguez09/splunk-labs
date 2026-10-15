@@ -27,4 +27,4 @@ How I built my Splunk home lab and loaded practice data.
 ## Results
 
 - Searching 'index-tutorial' over ALL time shows all five hosts: www1, www2, www3, mailsv, and vendor_sales.
-![Splunk showing all five hosts](host screenshot.png)
+![Splunk showing all five hosts](Host screenshot.png)
