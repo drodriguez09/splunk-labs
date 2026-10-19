@@ -26,6 +26,7 @@ index=tutorial sourcetype=access_combined_wcookie status=404 | stats count
 - **Prediction:** 690 rows, 1 column named `count`, showing 690.
 - **Results:** Partly correct. The column name and number were right, but there was only **1 row**, not 690.
 
+![stats count results](stats_count.png)
   
 - **What I learned:** `stats` makes one row per *group*, not one row per *event*. With no `by` clause, all 690 events form a single group, so the result is one row. Transforming commands like `stats` show their results on the Statistics tab instead of the Events tab.
 
