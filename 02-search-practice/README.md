@@ -13,6 +13,6 @@ index=tutorial sourcetype=access_combined_wcookie status=404
   
   ![Search 1 results showing 690 events](Status_404_search.png)
   
-- **What I learned:** Combining a sourcetype field with a status code narrows the search and allows you to look for specific events. Based on the results, the even split suggests a load balancer is spreading traffic across the three webs servers.  
+- **What I learned:** Combining a sourcetype field with a status code narrows the search and allows you to look for specific events. Based on the results, the even split suggests a load balancer is spreading traffic across the three web servers.  
 
   ![Host Field Results](status_404_host_field.png)
