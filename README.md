@@ -23,5 +23,5 @@ Hands-on practice with Splunk as I prepare for the **Splunk Core Certified User*
 
 ## About me
 
-Technical trainer moving into SOC analyst work. CompTIA Security+ certified. 
+Technical trainer and instructional designer with a cybersecurity background. CompTIA Security+ certified.
 See my [GitHub Profile](https://github.com/drodriguez09) for more. 
