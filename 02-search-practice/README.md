@@ -13,3 +13,5 @@ index=tutorial sourcetype=access_combined_wcookie status=404
   ![Search Results:](Status_404_search.png)
   
 - **What I learned:** Combining a sourcetype field with a status code narrows the search and allows you to look for specific events. Based on the results, I can also see that the load balancer for the webservers is working correctly since the traffic is split pretty evenly among the 3 webservers. 
+
+  ![Host Field Results](status_404_host_field.png)
