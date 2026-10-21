@@ -70,6 +70,8 @@ index=tutorial sourcetype=access_combined_wcookie | stats count by status
 
 3. **Compare with the site-wide baseline**
    - Site-wide, `404` made up about 1.7% of requests. This visitor's 1.9% is in line with that.
+  
+     ![Site-wide basseline](status_404_baseline.png)
 
 - **Verdict:** No signs of page scanning. The evidence suggests a very active but normal visitor. Status codes alone can't rule out a bot that only requests real pages.
 - **What I learned:** A busy IP is a question, not an answer. Comparing against a baseline turns a gut feeling into evidence.
