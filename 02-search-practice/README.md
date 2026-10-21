@@ -86,7 +86,9 @@ index=tutorial sourcetype=access_combined_wcookie | stats count by status
    index=tutorial sourcetype=access_combined_wcookie | rare status
 ```
    - **Prediction:** 10 rows, with `200` at the bottom.
-   - **Result:** Partly correct. `200` was at the bottom, but there were 9 rows, not 10. The 10-row limit is a maximum, and only 9 status codes exist. `403` (Forbidden) was the rarest, at about 0.6% of requests.
+   - **Result:** Partly correct. `200` was at the bottom, but there were 9 rows, not 10. The 10-row limit is a maximum, and only 9 status codes exist. `403` (Forbidden) was the rarest, at about 0.6%(rounded) of requests.
+
+     ![Least common code](rare_status.png)
 
 2. **Find who got the most 403s**
 ```spl
@@ -94,11 +96,15 @@ index=tutorial sourcetype=access_combined_wcookie | stats count by status
 ```
    - **Result:** `64.66.0.20` had the most, with 7.
 
+     ![Status 403 top ip's](status_403_top_ip.png)
+
 3. **See which pages they were refused**
 ```spl
    index=tutorial sourcetype=access_combined_wcookie clientip=64.66.0.20 status=403 | top uri_path
 ```
    - **Result:** All 7 were ordinary store pages: `/product.screen` (3), `/category.screen` (2), `/oldlink` (1), and `/cart.do` (1). No hidden or admin pages.
+
+     ![Top pages that received status 403](status_403_top_client_pages.png)
 
 4. **Compare with the baseline**
 ```spl
