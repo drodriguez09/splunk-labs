@@ -26,7 +26,7 @@ index=tutorial sourcetype=access_combined_wcookie status=404 | stats count
 - **Prediction:** 690 rows, 1 column named `count`, showing 690.
 - **Results:** Partly correct. The column name and number were right, but there was only **1 row**, not 690.
 
-![stats count results](stats_count.png)
+  ![stats count results](stats_count.png)
   
 - **What I learned:** `stats` makes one row per *group*, not one row per *event*. With no `by` clause, all 690 events form a single group, so the result is one row. Transforming commands like `stats` show their results on the Statistics tab instead of the Events tab.
 
@@ -40,7 +40,7 @@ index=tutorial sourcetype=access_combined_wcookie | stats count by status
 - **First attempt (my mistake):** I only got one row: `404` with 690. I had edited Search 2 and left `status=404` in front of the pipe, so only 404 events ever reached `stats`.
 - **Results after the fix:** 2 columns (`status` and `count`) and 9 rows, one per status code. `200` had the highest count (34,282), and `404` still showed 690, matching Searches 1 and 2. The rows were sorted from lowest to highest status code.
 
-![stats count by status](stats_count_by_status.png)
+  ![stats count by status](stats_count_by_status.png)
 
   
 - **What I learned:** The `by` field becomes its own column, and each different value gets its own row. Anything filtered out before the pipe never reaches `stats`. The results also give a baseline: roughly one "page not found" for every 50 successful requests.
@@ -57,7 +57,7 @@ index=tutorial sourcetype=access_combined_wcookie | stats count by status
    - **Prediction:** 10 rows, because `top` shows the top 10 values by default.
    - **Result:** Correct. 10 rows, with columns `clientip`, `count`, and `percent`. Client `87.194.216.51` was at the top with `1036` requests.
 
-     ![IP's with highest count](top_clientip.png)
+  ![IP's with highest count](top_clientip.png)
 
 2. **Check that visitor's status codes**
 ```spl
@@ -71,7 +71,7 @@ index=tutorial sourcetype=access_combined_wcookie | stats count by status
 3. **Compare with the site-wide baseline**
    - Site-wide, `404` made up about 1.7% of requests. This visitor's 1.9% is in line with that.
   
-     ![Site-wide basseline](status_404_baseline.png)
+  ![Site-wide basseline](status_404_baseline.png)
 
 - **Verdict:** No signs of page scanning. The evidence suggests a very active but normal visitor. Status codes alone can't rule out a bot that only requests real pages.
 - **What I learned:** A busy IP is a question, not an answer. Comparing against a baseline turns a gut feeling into evidence.
