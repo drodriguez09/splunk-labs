@@ -110,13 +110,17 @@ index=tutorial sourcetype=access_combined_wcookie | stats count by status
 ```spl
    index=tutorial sourcetype=access_combined_wcookie clientip=64.66.0.20 | top status
 ```
-   - **Result:** `403` was 2.2% of this visitor's roughly 300 requests: about 3.5 times the site-wide rate, but only 7 events.
+   - **Result:** `403` was 2.3% of this visitor's roughly 300 requests: about 3.5 times the site-wide rate, but only 7 events.
+
+     ![Percentage for status 403](status_403_top_client_percent.png)
 
 5. **Check the timing**
 ```spl
    index=tutorial sourcetype=access_combined_wcookie clientip=64.66.0.20 status=403 | table _time uri_path
 ```
    - **Result:** The refusals were spread over several days, about 2 per day, not in a burst.
+
+     ![Timing for 403 by client](table_time_status_403_top_ip.png)
 
 - **Verdict:** Elevated but low volume. The refusals were on ordinary pages and spread out over time, with no sign of probing or automation. Low priority; no action needed.
 - **What I learned:** Look at both the relative view (compared with the baseline) and the absolute view (how many events). Timing helps separate automated bursts from a returning human.
