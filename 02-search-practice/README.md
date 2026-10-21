@@ -55,11 +55,13 @@ index=tutorial sourcetype=access_combined_wcookie | stats count by status
    index=tutorial sourcetype=access_combined_wcookie | top clientip
 ```
    - **Prediction:** 10 rows, because `top` shows the top 10 values by default.
-   - **Result:** Correct. 10 rows, with columns `clientip`, `count`, and `percent`. BUSY_IP was at the top with COUNT requests.
+   - **Result:** Correct. 10 rows, with columns `clientip`, `count`, and `percent`. Client `87.194.216.51` was at the top with `1036` requests.
+
+     ![IP's with highest count](top_clientip.png)
 
 2. **Check that visitor's status codes**
 ```spl
-   index=tutorial sourcetype=access_combined_wcookie clientip=BUSY_IP | top status
+   index=tutorial sourcetype=access_combined_wcookie clientip=87.194.216.51 | top status
 ```
    - **Prediction:** A normal shopper would get mostly `200` (success). Someone scanning for hidden pages would get lots of `404` (not found).
    - **Result:** Mostly `200`, with `404` at 1.9%.
