@@ -66,6 +66,8 @@ index=tutorial sourcetype=access_combined_wcookie | stats count by status
    - **Prediction:** A normal shopper would get mostly `200` (success). Someone scanning for hidden pages would get lots of `404` (not found).
    - **Result:** Mostly `200`, with `404` at 1.9%.
 
+  ![Client 87.194.216.51](top_client_top_status.png)
+
 3. **Compare with the site-wide baseline**
    - Site-wide, `404` made up about 1.7% of requests. This visitor's 1.9% is in line with that.
 
